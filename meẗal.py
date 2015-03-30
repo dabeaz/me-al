@@ -1,3 +1,4 @@
+'''
 Meẗal - Better Than Decoration
 
 Synopsis
@@ -199,4 +200,57 @@ None are known or anticipated.
 Author
 ======
 Meẗal is the creation of David Beazley (@dabeaz) who disavows all involvement.
+'''
+
+import sys
+import builtins
+import types
+from contextlib import contextmanager
+from unicodedata import normalize
+
+__meẗalized__ = []
+_meẗalizers = []
+
+def _meẗalizing_import(*args, _builtin_import = __import__, **kwargs):
+    module = _builtin_import(*args, **kwargs)
+    if not hasattr(module, '__meẗalized__'):
+        names = dir(module)
+        normed_names = [normalize('NFD', name) for name in names]
+        meẗalized_names = [(name, normed.replace('\u0308',''))
+                            for name, normed in zip(names, normed_names) if '\u0308' in normed]
+        setattr(module, '__meẗalized__', [normed for _,normed in meẗalized_names])
+        for name, normed in meẗalized_names:
+            setattr(module, normed, module.__dict__.pop(name))
+
+    if not _meẗalizers:
+        return module
+
+    meẗalized = types.ModuleType(module.__name__)
+    meẗalized.__dict__.update(module.__dict__)
+    for name in module.__meẗalized__:
+        defn = getattr(meẗalized, name)
+        for decorate, dargs, dkwargs in reversed(_meẗalizers):
+            if dargs or dkwargs:
+                defn = decorate(*dargs,**dkwargs)(defn)
+            else:
+                defn = decorate(defn)
+        setattr(meẗalized, name, defn)
+    return meẗalized
+
+builtins.__import__ = _meẗalizing_import
+
+@contextmanager
+def meẗalmanager(decorate, dargs, dkwargs):
+    _meẗalizers.append((decorate, dargs, dkwargs))
+    try:
+        yield
+    finally:
+        _meẗalizers.pop()
+
+class Meẗal(types.ModuleType):
+    __ = sys.modules[__name__]
+    def __call__(self, decorator, *args, **kwargs):
+        return meẗalmanager(decorator, args, kwargs)
+
+sys.modules[__name__] = Meẗal(__name__)
 
