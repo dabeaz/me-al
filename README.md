@@ -1,11 +1,12 @@
-Meẗal - Better Than Decoration
-==============================
+Meẗal - The Decorator
+=====================
 
 Synopsis
 --------
 So, you've fully explored the use of decorators and maybe even
 decorators with arguments.  Where do you go from there?  Where you
-ask?  You, my friend, need to apply Meẗal--the better decorator.
+ask?  You, my friend, need to apply Meẗal--as in 
+[Heavy Metal](http://en.wikipedia.org/wiki/Metal_umlaut).
 
 For example, here is a function:
 
@@ -50,7 +51,7 @@ Now, run your program:
 You'll see your decorator applied to the functions requesting
 meẗal. If the above command fails with an ImportError, you're probably
 using a Mac. That's an unfortunate choice as you can't really expect a
-machine like that to be used for serious tasks.  Nevertheless, if
+toy machine like that to be used for serious tasks.  Nevertheless, if
 you'd really like to apply meẗal anyways, you can still do it by
 changing the top level import to the following:
 
@@ -69,7 +70,7 @@ Closer to the Meẗal
 -------------------
 Our simple example was really just a small taste to get the idea. If
 you really want to get serious though, you can use Meẗal with a
-package such as Numba:
+package such as [Numba](http://numba.pydata.org/):
 
     import meẗal
     from numba import jit
@@ -196,6 +197,17 @@ coding in Python 2, well, then fuck you.
 Limitations of Meẗal
 --------------------
 None are known or anticipated.
+
+Frequently "Asked" Questions
+----------------------------
+Q: How do you type the ẗ character?
+A: Using the ẗ key. WTF?
+
+Q: Can meẗal be installed using pip or easy_install?
+A: No.
+
+Q: Why is the Github repo called "me-al"?
+A: Reasons.
 
 Author
 ------

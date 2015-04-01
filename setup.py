@@ -9,4 +9,6 @@ setup(name='meẗal',
       author_email='dave@dabeaz.com',
       url='https://github.com/dabeaz/me-al',
       py_modules=['meẗal'],
+      keywords=['metal', 'decorators', 'performance'],
+      classifiers=['Programming Language :: Python :: 3 :: Only'],
      )

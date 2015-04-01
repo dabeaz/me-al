@@ -1,5 +1,5 @@
 '''
-Meẗal - Better Than Decoration
+Meẗal - The Decorator
 
 Synopsis
 ========
