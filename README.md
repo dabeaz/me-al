@@ -201,12 +201,15 @@ None are known or anticipated.
 Frequently "Asked" Questions
 ----------------------------
 Q: How do you type the ẗ character?
+
 A: Using the ẗ key. WTF?
 
 Q: Can meẗal be installed using pip or easy_install?
+
 A: No.
 
 Q: Why is the Github repo called "me-al"?
+
 A: Reasons.
 
 Author
