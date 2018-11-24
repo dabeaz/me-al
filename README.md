@@ -217,3 +217,6 @@ Author
 Meẗal is the creation of David Beazley (@dabeaz) who officially
 disavows all involvement.
 
+P.S.
+----
+You should come take a `course <https://www.dabeaz.com/courses.html>`_!
