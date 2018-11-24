@@ -219,4 +219,4 @@ disavows all involvement.
 
 P.S.
 ----
-You should come take a `course <https://www.dabeaz.com/courses.html>`_!
+You should come take a [course](https://www.dabeaz.com/courses.html)!
